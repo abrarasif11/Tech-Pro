@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Courses from './component/Courses/Courses';
+import Register from './component/Register/Register';
 import Blog from './FAQ/Blog/Blog';
 import FAQ from './FAQ/FAQ';
 import Main from './layout/Main';
@@ -22,6 +23,10 @@ function App() {
       {
         path : '/blog',
         element : <Blog></Blog>
+      },
+      {
+        path : '/register',
+        element : <Register></Register>
       }
     ]
   }

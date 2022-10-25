@@ -22,7 +22,7 @@ function App() {
       },
       {
         path : '/courses',
-        loader: () => fetch('http://localhost:5000/courses'),
+        loader: () => fetch('https://tech-pro-server.vercel.app/courses'),
         element : <Courses></Courses>
       },
       {

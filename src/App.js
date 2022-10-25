@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Courses from './component/Courses/Courses';
+import ErrorPage from './component/ErrorPage/ErrorPage';
 import Login from './component/Login/Login';
 import Register from './component/Register/Register';
 import Blog from './FAQ/Blog/Blog';
@@ -34,6 +35,10 @@ function App() {
         element : <Login></Login>
       }
     ]
+  },
+  {
+   path: '*',
+   element : <ErrorPage></ErrorPage>
   }
  ])
   return (

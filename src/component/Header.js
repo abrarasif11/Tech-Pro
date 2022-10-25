@@ -11,7 +11,7 @@ const Header = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"> 
             <li>
-              <Link to='/courses'>Courses</Link>
+              <Link className='font-poppins' to='/courses'>Courses</Link>
               </li>
             <li tabIndex={0}>
               <Link to='/faq' className="justify-between">
@@ -19,7 +19,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to='/blog'>
+              <Link className='font-poppins' to='/blog'>
               Blog
               </Link>
               </li>
@@ -27,34 +27,34 @@ const Header = () => {
         </div>
         <div>
         {/* <a href=""><img className='w-1/12 rounded-l-full rounded-r-full' src="th.jpeg" alt="" /></a> */}
-        <a className="btn btn-ghost normal-case text-2xl">Tech Pro</a>
+        <a className= " font-poppins btn btn-ghost normal-case text-2xl">Tech Pro</a>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <Link to='/courses'>
+            <Link className='font-poppins' to='/courses'>
             Courses
             </Link>
             </li>
           <li tabIndex={0}>
-            <Link to='/faq'>
+            <Link className='font-poppins' to='/faq'>
               FAQ
             </Link>
             
           </li>
           <li>
-            <Link to='/blog'>
+            <Link className='font-poppins' to='/blog'>
             Blog
             </Link>
             </li>
         </ul>
       </div>
       <div className="navbar-end ">
-        <Link to='/login' className='btn bg-zinc-900	 mr-2'>
+        <Link to='/login' className='text-sm font-poppins btn bg-zinc-900	 mr-2'>
           Login
         </Link>
-        <Link to='/register' className='btn bg-zinc-900	mr-2'>
+        <Link to='/register' className='font-poppins btn bg-zinc-900	mr-2'>
           Register
         </Link>
       </div>

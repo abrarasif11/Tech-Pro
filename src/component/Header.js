@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         <div>
         {/* <a href=""><img className='w-1/12 rounded-l-full rounded-r-full' src="th.jpeg" alt="" /></a> */}
-        <a className= " font-poppins btn btn-ghost normal-case text-2xl">Tech Pro</a>
+        <Link to='/' className= " font-poppins btn btn-ghost normal-case text-2xl">Tech Pro</Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">

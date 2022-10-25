@@ -31,17 +31,17 @@ const Login = () => {
         <div className="space-y-4">
           <div className="space-y-2">
             <label for="email" className="block text-left text-sm">Email address</label>
-            <input type="email" name="email" id="email" placeholder="Enter Email" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+            <input type="email" name="email" id="email" placeholder="Enter Your Email" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
           </div>
           <div className="space-y-2">
             <div className="flex justify-between">
               <label for="password" className="text-sm">Password</label>
               <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</a>
             </div>
-            <input type="password" name="password" id="password" placeholder="Enter Password" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+            <input type="password" name="password" id="password" placeholder="Enter Your Password" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required/>
           </div>
         </div>
-        <button type="button" className="w-full px-8 py-3 font-semibold rounded-md bg-black text-gray-200">Sign in</button>
+        <button type="button" className="w-full px-8 py-3 font-semibold rounded-md hover:bg-zinc-800 bg-black text-gray-200">Sign in</button>
       </form>
     </div>
     )

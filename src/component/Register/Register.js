@@ -3,44 +3,28 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
     return (
+      <section className="p-6 font-poppins dark:text-gray-100">
+      <form novalidate="" className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow dark:bg-gray-900 ng-untouched ng-pristine ng-valid">
+        <h2 className="w-full text-3xl font-bold leading-tight">Register Here...</h2>
         <div>
-        <div className="hero min-h-screen bg-base-200">
-<div className="hero-content flex-col lg">
- <div className="text-center lg:text-left">
-   <h1 className="text-5xl font-bold">Please Register Here!</h1>
-   
- </div>
- <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-   <form  className="card-body">
-     <div className="form-control">
-       <label className="label">
-         <span className="label-text">User Name</span>
-       </label>
-       <input type="text" name='name' placeholder="user name" className="input input-bordered" required />
-     </div>
-     <div className="form-control">
-       <label className="label">
-         <span className="label-text">Email</span>
-       </label>
-       <input type="email" name='email' placeholder="email" className="input input-bordered" required />
-     </div>
-     <div className="form-control">
-       <label className="label">
-         <span className="label-text">Password</span>
-       </label>
-       <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-       <label className="label">
-       <Link to={'/login'} className="btn btn-active btn-link">Already have an account?</Link>
-       </label>
-     </div>
-     <div className="form-control mt-6">
-       <button  className="btn bg-sky-700 border-none hover:bg-sky-500">Register</button>
-     </div>
-   </form>
- </div>
-</div>
-</div> 
-     </div>
+          <label for="name" className="block mb-1 ml-1">Name</label>
+          <input id="name" type="text" placeholder="enter your name" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-gray-800 dark:bg-gray-800" />
+          <label for="name" className="block mb-1 ml-1">Photo URL</label>
+          <input id="name" type="text" placeholder="enter photo url" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-gray-800 dark:bg-gray-800" />
+        </div>
+        <div>
+          <label for="email" className="block mb-1 ml-1">Email</label>
+          <input id="email" type="email" placeholder="enter your email" required="" className="block w-full p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-gray-800" />
+        </div>
+        <div>
+          <label for="message" className="block mb-1 ml-1">Password</label>
+          <input id="password" type="password" placeholder="enter your password" className="block w-full p-2 rounded autoexpand focus:ring-gray-800"></input>
+        </div>
+        <div>
+          <button type="submit" className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 dark:bg-violet-400 focus:ring-violet-400  bg-black text-gray-200">Register</button>
+        </div>
+      </form>
+    </section>
     );
 };
 

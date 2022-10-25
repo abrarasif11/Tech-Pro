@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Courses from './component/Courses/Courses';
 import ErrorPage from './component/ErrorPage/ErrorPage';
+import Home from './component/Home/Home';
 import Login from './component/Login/Login';
 import Register from './component/Register/Register';
 import Blog from './FAQ/Blog/Blog';
@@ -14,6 +15,10 @@ function App() {
     path : '/',
     element : <Main></Main>,
     children : [
+      {
+      path: '/home',
+      element: <Home></Home>
+      },
       {
         path : '/courses',
         loader: () => fetch('http://localhost:5000/courses'),

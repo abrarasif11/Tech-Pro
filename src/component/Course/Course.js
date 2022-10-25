@@ -10,7 +10,7 @@ const Course = ({course}) => {
 			<h2 className="text-3xl font-semibold tracking-wide">{course.name}</h2>
 			
 		</div>
-		<button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 text-gray-900">Read more</button>
+		<button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-black hover:bg-slate-900	 text-white">Course Details</button>
 	</div>
 </div>
         </div>

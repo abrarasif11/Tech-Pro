@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup} from "firebase/auth"
+import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from "firebase/auth"
 import app from '../../firebase/Firebase.config';
+import toast from 'react-hot-toast';
 
 export const AuthContext = createContext();
 const auth = getAuth(app); 
@@ -31,13 +32,38 @@ const AuthProvider = ({children}) => {
 
     const signInwithGithub = (provider) =>{
         signInWithPopup(auth, provider);
+
+       
     }
+    const logOut = () => {
+        signOut(auth);
+    };
+
+    const verifyEmail = () =>{
+        sendEmailVerification(auth.currentUser).then(() => {
+            toast.success('Please check your email verification mail') 
+        });
+    }
+    const updateUserProfile = (name, photoURL) => {
+        updateProfile(auth.currentUser, {
+            displayName : name,
+            photoURL : photoURL,
+        })
+        .then(() => {
+            console.log("Profile Created");
+        })
+        .catch((error) => console.error(error));
+    };
     const authInfo = { 
            user,
            createUSer,
            signInwithGoogle,
            signInwithGithub,
-           signIn };
+           signIn,
+           logOut,
+           verifyEmail,
+           updateUserProfile
+         };
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

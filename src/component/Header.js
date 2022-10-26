@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider/AuthProvider';
 
 const Header = () => {
-  const {user} = useContext(AuthContext);
+  const {user , logOut} = useContext(AuthContext);
   console.log(user);
+
+   const handleLogOut = () => {
+    logOut()
+    .then(() => {})
+    .catch((error) => {
+      console.error(error);
+    });
+   }
 
     return (
       <div className="navbar bg-blue-100">
@@ -55,12 +63,26 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end ">
+        {
+          user && user?.uid ? (
+            <>
+            <Link className='btn bg-zinc-900 mr-2' onClick={handleLogOut}>
+             Log Out
+            </Link>
+            </>
+          )
+          :
+          (
+         <>       
         <Link to='/login' className='text-sm font-poppins btn bg-zinc-900	 mr-2'>
           Login
         </Link>
         <Link to='/register' className='font-poppins btn bg-zinc-900	mr-2'>
           Register
         </Link>
+          </>  
+          )
+}
       </div>
     </div>
     );

@@ -6,6 +6,7 @@ import Home from './component/Home/Home';
 import Login from './component/Login/Login';
 import Register from './component/Register/Register';
 import RightSideNav from './component/RightSideNav/RightSideNav';
+import RightSite from './component/RightSite/RightSite';
 import Blog from './FAQ/Blog/Blog';
 import FAQ from './FAQ/FAQ';
 import Main from './layout/Main';
@@ -41,10 +42,10 @@ function App() {
         path : '/login',
         element : <Login></Login>
       },
-      // {
-      //   path: '/rightsidenav',
-      //   element : <RightSideNav></RightSideNav>
-      // }
+      {
+        path: '/rightsite',
+        element : <RightSite></RightSite>
+      }
     ]
   },
   {

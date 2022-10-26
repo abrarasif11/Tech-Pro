@@ -18,7 +18,7 @@ const Courses = () => {
             }
             </div>
             <div>
-            <RightSideNav></RightSideNav>
+            <RightSideNav courses={courses}></RightSideNav>
             </div>
         </div>
     );

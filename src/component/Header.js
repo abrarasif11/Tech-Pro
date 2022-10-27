@@ -38,7 +38,7 @@ const Header = () => {
           </ul>
         </div>
         <div>
-					<img style={{width : '9%'}} src="https://tse3.mm.bing.net/th?id=OIP.dRB6vilESTbaDvlkgti-JAHaGy&pid=Api&P=0" alt="" />
+					<img  style={{width : '9%'}} src="https://tse3.mm.bing.net/th?id=OIP.dRB6vilESTbaDvlkgti-JAHaGy&pid=Api&P=0" alt="" />
         
 					
         <Link to='/' className= " font-poppins btn btn-ghost normal-case text-2xl">Tech Pro</Link>

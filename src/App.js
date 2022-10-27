@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Checkout from './component/Checkout/Checkout';
 import CourseDetails from './component/CourseDetails/CourseDetails';
 import Courses from './component/Courses/Courses';
 import ErrorPage from './component/ErrorPage/ErrorPage';
@@ -49,9 +50,13 @@ function App() {
         element : <Login></Login>
       },
       // {
-      //   path: '/rightsite',
-      //   element : <RightSite></RightSite>
-      // }
+      //   path: "/checkout/:courseID",
+      //   loader: async ({ params }) =>
+      //     fetch (`https://tech-pro-server.vercel.app/courses/${params.id}`),
+      //   element: <PrivateRoute>
+      //       <Checkout></Checkout>
+      //     </PrivateRoute>
+      // },
     ]
   },
   {

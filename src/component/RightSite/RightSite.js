@@ -12,7 +12,7 @@ const RightSite = () => {
                 <h2 className="text-3xl font-semibold tracking-wide">{coursedetails.name}</h2>
                 <p className="dark:text-gray-100">{coursedetails.duration}</p>
             </div>
-            <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400 dark:text-gray-900">Get Premium</button>
+            <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-violet-400  text-gray-900">Get Premium</button>
         </div>
     </div>
     );

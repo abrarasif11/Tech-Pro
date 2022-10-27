@@ -1,11 +1,14 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
 
-  const {signInwithGoogle, signInwithGithub} = useContext(AuthContext);
-
+  const {signInwithGoogle, signIn, signInwithGithub} = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/'
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
@@ -28,6 +31,28 @@ const Login = () => {
     .catch((error) => {
       console.error(error);
     });
+
+    const logIn = (event) => {
+      event.preventDefault();
+      const form = event.target;
+      const email = form.email.value;
+      const password = form.email.value;
+  
+      console.log(email, password);
+  
+      signIn(email, password)
+        .then((result) => {
+          const user = result.user;
+          console.log(user);
+          form.reset();
+          navigate(from, { replace: true });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    };
+  
+  
   }
     return (
       <div className="w-full mx-auto font-poppins mt-10 mb-10 max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100">
@@ -55,15 +80,15 @@ const Login = () => {
         <p className="px-3 dark:text-gray-400">OR</p>
         <hr className="w-full dark:text-gray-400"/>
       </div>
-      <form novalidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
+      <form  action="" className="space-y-8 ng-untouched ng-pristine ng-valid">
         <div className="space-y-4">
           <div className="space-y-2">
-            <label for="email" className="block text-left text-sm">Email address</label>
+            <label htmlFor="email" className="block text-left text-sm">Email address</label>
             <input type="email" name="email" id="email" placeholder="Enter Your Email" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required />
           </div>
           <div className="space-y-2">
             <div className="flex justify-between">
-              <label for="password" className="text-sm">Password</label>
+              <label htmlFor="password" className="text-sm">Password</label>
               <a rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</a>
             </div>
             <input type="password" name="password" id="password" placeholder="Enter Your Password" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" required/>

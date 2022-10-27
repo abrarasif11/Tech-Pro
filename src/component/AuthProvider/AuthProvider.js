@@ -7,11 +7,13 @@ export const AuthContext = createContext();
 const auth = getAuth(app); 
 const AuthProvider = ({children}) => {
     const [user , setUSer] = useState(null); 
+    const [loading, setLoading] = useState(true);
     
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
             console.log('use state changed', currentUser);
             setUSer(currentUser)
+            setLoading(false);
         })
         return () =>{
             unsubscribe();
@@ -21,9 +23,12 @@ const AuthProvider = ({children}) => {
    
 
     const createUser = (email, password) => {
-       return createUserWithEmailAndPassword(auth, email, password);
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
     };
     const signIn = (email, password) => {
+        setLoading(true)
+
         signInWithEmailAndPassword(auth,  email, password);
     };
     const signInwithGoogle = (provider) => {
@@ -36,9 +41,11 @@ const AuthProvider = ({children}) => {
        
     }
     const logOut = () => {
+        setLoading(true)
+
         signOut(auth);
     };
-
+    
     const verifyEmail = () =>{
         sendEmailVerification(auth.currentUser).then(() => {
             toast.success('Please check your email verification mail') 
@@ -55,13 +62,13 @@ const AuthProvider = ({children}) => {
         .catch((error) => console.error(error));
     };
     const authInfo = { 
+           loading,
            user,
            createUser,
            signInwithGoogle,
            signInwithGithub,
            signIn,
            logOut,
-           verifyEmail,
            updateUserProfile
          };
     return (

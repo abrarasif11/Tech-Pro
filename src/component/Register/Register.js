@@ -22,7 +22,7 @@ const Register = () => {
       const user = result.user;
       updateUserProfile(userName, photoURL)
       console.log(user);
-      verifyEmail();
+      // verifyEmail();
       htmlForm.reset();
       setError('');
     })

@@ -72,6 +72,12 @@ const Header = () => {
         {
           user && user?.uid ? (
             <>
+            <img
+             src={user?.photoURL}
+             alt=""
+             style={{height : "30px", marginRight: "10px" }}
+             title={user?.displayName}
+            />
             <Link className='btn bg-zinc-900 mr-2' onClick={handleLogOut}>
              Log Out
             </Link>

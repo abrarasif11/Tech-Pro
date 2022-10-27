@@ -37,8 +37,9 @@ const Header = () => {
               </li>
           </ul>
         </div>
-        <div >
+        <div>
 					<img style={{width : '9%'}} src="https://tse3.mm.bing.net/th?id=OIP.dRB6vilESTbaDvlkgti-JAHaGy&pid=Api&P=0" alt="" />
+        
 					
         <Link to='/' className= " font-poppins btn btn-ghost normal-case text-2xl">Tech Pro</Link>
         </div>
@@ -63,6 +64,10 @@ const Header = () => {
             </li>
         </ul>
       </div>
+      <label htmlFor="check" className='bg-gray-100 ml-2 cursor-pointer relative w-14 h-6 rounded-full'>
+      <input type="checkbox" id='check' className="sr-only peer" />
+      <span className='w-2/5 h-4/5 bg-gray-400 absolute rounded-full left-1 top-1 peer-checked:bg-black peer-checked:left-5 '></span>
+      </label>
       <div className="navbar-end ">
         {
           user && user?.uid ? (

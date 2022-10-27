@@ -4,7 +4,7 @@ const FAQ = () => {
     return (
         <section className="dark:bg-gray-800 font-poppins dark:text-gray-100">
 	<div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
-		<h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Frequently Asked Questions</h2>
+		<h2 className="mb-12 text-3xl font-semibold leading-none text-center sm:text-5xl">Learn More About Our Courses</h2>
 		<div className="grid gap-10 md:gap-8 sm:p-3 md:grid-cols-2 lg:px-12 xl:px-32">
 			<div>
 				<h3 className="text-2xl font-semibold hover:bg-green-600 rounded-md">Quran Course</h3>

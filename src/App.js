@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Checkout from './component/Checkout/Checkout';
@@ -12,6 +13,7 @@ import RightSite from './component/RightSite/RightSite';
 import Blog from './FAQ/Blog/Blog';
 import FAQ from './FAQ/FAQ';
 import Main from './layout/Main';
+import Spinner from './Spinner/Spinner';
 
 function App() {
  const router = createBrowserRouter([
@@ -49,14 +51,6 @@ function App() {
         path : '/login',
         element : <Login></Login>
       },
-      // {
-      //   path: "/checkout/:courseID",
-      //   loader: async ({ params }) =>
-      //     fetch (`https://tech-pro-server.vercel.app/courses/${params.id}`),
-      //   element: <PrivateRoute>
-      //       <Checkout></Checkout>
-      //     </PrivateRoute>
-      // },
     ]
   },
   {
@@ -66,7 +60,8 @@ function App() {
  ])
   return (
     <div className="App">
-    <RouterProvider router={router}></RouterProvider>      
+    <RouterProvider fallbackElement={<Spinner></Spinner>} router={router}></RouterProvider>    
+    <Toaster></Toaster>  
     </div>
   );
 }

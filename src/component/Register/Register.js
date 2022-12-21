@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
+  
   const [error, setError] = useState(null);
 
   const { createUser, updateUserProfile, verifyEmail} = useContext(AuthContext);
@@ -22,6 +24,7 @@ const Register = () => {
       const user = result.user;
       updateUserProfile(userName, photoURL)
       console.log(user);
+      toast.success('User Created Successfully')
       // verifyEmail();
       htmlForm.reset();
       setError('');

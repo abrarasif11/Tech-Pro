@@ -9,7 +9,7 @@ const RightSideNav = ({courses}) => {
              key={course.id}>
                 {course?.name}
                 :
-          <p>{}</p>
+          {/* <p>{}</p> */}
                 </Link>)
           }
           
